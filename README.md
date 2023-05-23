@@ -5,7 +5,14 @@
 As you can tell its the same commands used in the video, but wrapped up in a script making the whole process faster and easier!
 
 <h1>Installing and usage</h1>
-<p>Getting source:</p>
-<code>git clone https://github.com/Luudde/WiFi-scanner</code>
+<p>Getting the source:</p>
+<code>git clone https://github.com/Luudde/WiFi-scanner
+cd WiFi-scanner</code>
+
+
+
+
+<p>Make the file executable:</p>
+<code>sudo chmod +x WiFi-scanner</code>
 
 

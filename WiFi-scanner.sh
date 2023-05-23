@@ -11,14 +11,14 @@ NC='\033[0m' # No Color
 if ! command -v hcxdumptool > /dev/null; then
         echo -e "${YELLOW}[!] hcxdumptool not found. Installing...${NC}"
         sudo apt update
-        sudo apt install hcxdumptool
+        sudo apt install hcxdumptool -y
         echo -e "${GREEN}[*] hcxdumptool installed.${NC}"
         echo
 fi
 if ! command -v hcxpcapngtool > /dev/null; then
         echo -e "${YELLOW}[!] hcxpcapngtool not found. Installing...${NC}"
         sudo apt update
-        sudo apt install hcxtools
+        sudo apt install hcxtools -y
         echo -e "${GREEN}[*] hcxpcapngtool installed.${NC}"
         echo
 fi

@@ -3,7 +3,7 @@ This is taken from David Bombal's YouTube video regarding how to crack a WiFi pa
 
 [![David Bombal](https://img.youtube.com/vi/Usw0IlGbkC4/0.jpg)](https://www.youtube.com/watch?v=Usw0IlGbkC4)
 
-
+Since 2022 the tools hcxdumptool and hcxpcapngtool by ZerBea has been updated, this script has then been updated to work with these new versions!
 
 ## Installation and usage
 Getting the source:

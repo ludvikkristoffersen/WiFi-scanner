@@ -34,8 +34,8 @@ read -p "[-] Enter the WLAN you wish to use: " wlan
 echo
 
 # Ask user for the output pcapng file name
-read -p "[-] Enter the pcapng output filename (without extension): " output
-output="$output.pcapng"
+read -p "[-] Enter the pcapng output filename (without extension): " pcapngfile
+output="${pcapngfile}.pcapng"
 echo
 
 # Ask the user how long they whish to run the scan for
@@ -56,8 +56,8 @@ sudo systemctl start wpa_supplicant.service
 sudo systemctl start NetworkManager.service
 
 # Ask the user to enter a filename for the hc22000 file
-read -p "[-] Enter the hashcat file name (without extension): " hashcatFile
-hashcatFile="$hashcatFile.hc22000"
+read -p "[-] Enter the hashcat file name (without extension): " hcfile
+hashcatFile="${hcfile}.hc22000"
 echo
 
 # Ask the user for a name for the ESSID list
@@ -67,4 +67,3 @@ echo
 # Convert the pcapng file to a hc22000 file and create a ESSID list
 echo -e "${BLUE}[*] Running hcxpcapngtool command...${NC}"
 hcxpcapngtool -o "$hashcatFile" -E "$essidList" "$output"
-

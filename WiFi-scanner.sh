@@ -67,3 +67,6 @@ echo
 # Convert the pcapng file to a hc22000 file and create a ESSID list
 echo -e "${BLUE}[*] Running hcxpcapngtool command...${NC}"
 hcxpcapngtool -o "$hashcatFile" -E "$essidList" "$output"
+
+# Message when finished
+echo -e "${BLUE}[*] WiFi scanner completed.${NC}"

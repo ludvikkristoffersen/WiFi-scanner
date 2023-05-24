@@ -15,7 +15,7 @@ __________________
 |__________________|
 "
 echo
-echo "${BLUE}- - - - - - by Ludde${NC}"
+echo -e "${BLUE}- - - - - - by Ludde${NC}"
 sleep 2
 
 # Installing the tools if they are not installed

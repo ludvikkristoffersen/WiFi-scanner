@@ -8,7 +8,7 @@ This is taken from David Bombal's YouTube video regarding how to crack a WiFi pa
 ## Installation and usage
 Getting the source:
 ```bash
-git clone https://github.com/Luudde/WiFi-scanner
+git clone https://github.com/Luudde/WiFi-scanner.git
 cd WiFi-scanner
 ```
 Make the file executable:

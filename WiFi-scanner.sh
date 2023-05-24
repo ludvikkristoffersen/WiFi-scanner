@@ -34,6 +34,7 @@ read -p "[-] Enter the WLAN you wish to use: " wlan
 echo
 
 # Ask user for the output pcapng file name
+#
 read -p "[-] Enter the pcapng output filename (without extension): " pcapngfile
 output="${pcapngfile}.pcapng"
 echo
@@ -44,7 +45,7 @@ echo
 
 # Running the hcxdumptool
 echo -e "${BLUE}[*] Running hcxdumptool command...${NC}"
-sudo hcxdumptool -i "$wlan" -o "$output" --active_beacon --enable_status=15 &
+sudo hcxdumptool -i "$wlan" -w "$output" -F -t 15 &
 pid=$!
 
 sleep "$duration"

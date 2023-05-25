@@ -37,7 +37,9 @@ echo
 # Stopping services that may cause issues
 sudo systemctl stop wpa_supplicant.service
 sudo systemctl stop NetworkManager.service
-
+echo -e "${BLUE}[*] ${GREEN}List of available WiFi adapters:${NC}"
+iw dev | grep "Interface"
+echo
 # Ask user for the wlan they want to use
 read -p "[-] Enter the WLAN you wish to use: " wlan
 echo

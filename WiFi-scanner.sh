@@ -66,6 +66,8 @@ sudo kill "$pid"
 # Starting the services we stopped earlier
 sudo systemctl start wpa_supplicant.service
 sudo systemctl start NetworkManager.service
+echo
+echo
 
 # Ask the user to enter a filename for the hc22000 file
 read -p "[-] Enter the hashcat file name (without extension): " hcfile

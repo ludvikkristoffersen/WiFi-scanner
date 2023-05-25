@@ -37,8 +37,17 @@ echo
 # Stopping services that may cause issues
 sudo systemctl stop wpa_supplicant.service
 sudo systemctl stop NetworkManager.service
+
+# List adapters
 echo -e "${BLUE}[*] ${GREEN}List of available WiFi adapters:${NC}"
-iw dev | grep "Interface"
+adapters=$(iwconfig 2>/dev/null | grep -oP '^[^\s]+')
+counter=1
+while read -r adapter; do
+  chipset=$(lspci -nn | grep -i "network.*$adapter" | grep -oP ':\s+\K.*$')
+
+  echo "$counter. $adapter       $chipset"
+  counter=$((counter + 1))
+done <<< "$adapters"
 echo
 # Ask user for the wlan they want to use
 read -p "[-] Enter the WLAN you wish to use: " wlan

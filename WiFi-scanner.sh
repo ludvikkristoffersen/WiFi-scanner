@@ -41,17 +41,17 @@ sudo systemctl stop wpa_supplicant.service
 sudo systemctl stop NetworkManager.service
 
 # Ask user for the wlan they want to use
-read -p "${BLUE}[-] ${GREEN}Enter the WLAN you wish to use: ${NC}" -e wlan
+read -p $"\033[34m[-]\033[32m Enter the WLAN you wish to use: \033[0m" -e wlan
 echo
 
 # Ask user for the output pcapng file name
 #
-read -p "${BLUE}[-] ${GREEN}Enter the pcapng output filename (without extension): ${NC}" -e pcapngfile
+read -p $"\033[34m[-]\033[32m Enter the pcapng output filename (without extension): \033[0m" -e pcapngfile
 output="${pcapngfile}.pcapng"
 echo
 
 # Ask the user how long they whish to run the scan for
-read -p "${BLUE}[-] ${GREEN}Enter the duration (in seconds) to run the command: ${NC}" -e duration
+read -p $"\033[34m[-]\033[32m Enter the duration (in seconds) to run the command: \033[0m" -e duration
 echo
 
 # Running the hcxdumptool
@@ -68,12 +68,12 @@ sudo systemctl start wpa_supplicant.service
 sudo systemctl start NetworkManager.service
 
 # Ask the user to enter a filename for the hc22000 file
-read -p -e "${BLUE}[-] ${GREEN}Enter the hashcat file name (without extension): ${NC}" hcfile
+read -p $"\033[34m[-]\033[32m Enter the hashcat file name (without extension): \033[0m" -e hcfile
 hashcatFile="${hcfile}.hc22000"
 echo
 
 # Ask the user for a name for the ESSID list
-read -p -e "${BLUE}[-] ${GREEN}Enter the ESSID list name: ${NC}" essidList
+read -p $"\033[34m[-]\033[32m Enter the ESSID list name: \033[0m" -e essidList
 echo
 
 # Convert the pcapng file to a hc22000 file and create a ESSID list

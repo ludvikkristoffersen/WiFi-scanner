@@ -3,6 +3,13 @@ This is taken from David Bombal's YouTube video regarding how to crack a WiFi pa
 
 [![David Bombal](https://img.youtube.com/vi/Usw0IlGbkC4/0.jpg)](https://www.youtube.com/watch?v=Usw0IlGbkC4)
 
+## Tools in script
+<p>The tools used in this script are created by ZerBea, if you want to learn more about the tools visit the links below!</p>
+<p>These are the tools used in the script:</p>
+
+   • [hcxdumptool](https://github.com/ZerBea/hcxdumptool) by ZerBea
+ 
+   • [hcxtools](https://github.com/ZerBea/hcxtools) by ZerBea
 
 ## Installation and usage
 Getting the source:

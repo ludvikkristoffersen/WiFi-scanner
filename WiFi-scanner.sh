@@ -16,6 +16,7 @@ __________________
 "
 echo -e "${BLUE}- - - - - - by Ludde${NC}"
 sleep 2
+echo
 
 # Installing the tools if they are not installed
 if ! command -v hcxdumptool > /dev/null; then
@@ -32,7 +33,7 @@ if ! command -v hcxpcapngtool > /dev/null; then
         echo -e "${GREEN}[*] hcxpcapngtool installed.${NC}"
         echo
 fi
-echo -e "${GREEN}[*] All tools required are installed.${NC}"
+echo -e "${BLUE}[*] ${GREEN}All tools required are installed.${NC}"
 echo
 
 # Stopping services that may cause issues
@@ -40,17 +41,17 @@ sudo systemctl stop wpa_supplicant.service
 sudo systemctl stop NetworkManager.service
 
 # Ask user for the wlan they want to use
-read -p "[-] Enter the WLAN you wish to use: " wlan
+read -p -e "${BLUE}[-] ${GREEN}Enter the WLAN you wish to use: ${NC}" wlan
 echo
 
 # Ask user for the output pcapng file name
 #
-read -p "[-] Enter the pcapng output filename (without extension): " pcapngfile
+read -p -e "${BLUE}[-] ${GREEN}Enter the pcapng output filename (without extension): ${NC}" pcapngfile
 output="${pcapngfile}.pcapng"
 echo
 
 # Ask the user how long they whish to run the scan for
-read -p "[-] Enter the duration (in seconds) to run the command: " duration
+read -p -e "${BLUE}[-] ${GREEN}Enter the duration (in seconds) to run the command: ${NC}" duration
 echo
 
 # Running the hcxdumptool
@@ -67,12 +68,12 @@ sudo systemctl start wpa_supplicant.service
 sudo systemctl start NetworkManager.service
 
 # Ask the user to enter a filename for the hc22000 file
-read -p "[-] Enter the hashcat file name (without extension): " hcfile
+read -p -e "${BLUE}[-] ${GREEN}Enter the hashcat file name (without extension): ${NC}" hcfile
 hashcatFile="${hcfile}.hc22000"
 echo
 
 # Ask the user for a name for the ESSID list
-read -p "[-] Enter the ESSID list name: " essidList
+read -p -e "${BLUE}[-] ${GREEN}Enter the ESSID list name: ${NC}" essidList
 echo
 
 # Convert the pcapng file to a hc22000 file and create a ESSID list
@@ -80,4 +81,4 @@ echo -e "${BLUE}[*] Running hcxpcapngtool command...${NC}"
 hcxpcapngtool -o "$hashcatFile" -E "$essidList" "$output"
 
 # Message when finished
-echo -e "${BLUE}[*] WiFi scanner completed.${NC}"
+echo -e "${YELLOW}[*] WiFi scanner completed.${NC}"

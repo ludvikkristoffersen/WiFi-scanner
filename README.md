@@ -7,7 +7,6 @@ This is taken from David Bombal's YouTube video regarding how to crack a WiFi pa
 
 # Tools in script
 <p>The tools used in this script are created by ZerBea, if you want to learn more about the tools visit the links below!</p>
-<p>These are the tools used in the script:</p>
 
    • [hcxdumptool](https://github.com/ZerBea/hcxdumptool) by ZerBea
  

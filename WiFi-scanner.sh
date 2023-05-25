@@ -41,17 +41,17 @@ sudo systemctl stop wpa_supplicant.service
 sudo systemctl stop NetworkManager.service
 
 # Ask user for the wlan they want to use
-read -p -e "${BLUE}[-] ${GREEN}Enter the WLAN you wish to use: ${NC}" wlan
+read -p "${BLUE}[-] ${GREEN}Enter the WLAN you wish to use: ${NC}" -e wlan
 echo
 
 # Ask user for the output pcapng file name
 #
-read -p -e "${BLUE}[-] ${GREEN}Enter the pcapng output filename (without extension): ${NC}" pcapngfile
+read -p "${BLUE}[-] ${GREEN}Enter the pcapng output filename (without extension): ${NC}" -e pcapngfile
 output="${pcapngfile}.pcapng"
 echo
 
 # Ask the user how long they whish to run the scan for
-read -p -e "${BLUE}[-] ${GREEN}Enter the duration (in seconds) to run the command: ${NC}" duration
+read -p "${BLUE}[-] ${GREEN}Enter the duration (in seconds) to run the command: ${NC}" -e duration
 echo
 
 # Running the hcxdumptool

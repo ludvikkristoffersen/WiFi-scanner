@@ -71,6 +71,7 @@ pid=$!
 sleep "$duration"
 
 sudo kill "$pid"
+clear
 
 # Starting the services we stopped earlier
 sudo systemctl start wpa_supplicant.service

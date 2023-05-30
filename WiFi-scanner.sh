@@ -60,23 +60,41 @@ read -p "[-] Enter the WLAN you wish to use (example: wlan0): " wlan
 echo
 
 # Ask user for the output pcapng file name
-#
 read -p "[-] Enter the pcapng output filename (without extension): " pcapngfile
 output="${pcapngfile}.pcapng"
 echo
 
+# Choose a mode
+read -p "[-] Choose a mode:
+1. Timer mode
+2. Manual mode
+Enter your choice (1 or 2): " mode
+echo
+
+case $mode in
+  1)
+    read -p "[-] Enter the duration (in seconds) to run the command: " duration
+    echo
+    echo -e "${BLUE}[*] Running hcxdumptool command in timer mode...${NC}"
+    xterm -T "hcxdumptool" -e sudo hcxdumptool -i "$wlan" -o "$output" --active_beacon --enable_status=63 &
+    pid=$!
+
+    sleep "$duration"
+
+    sudo kill "$pid"
+    ;;
+  2)
+    # Running the hcxdumptool in manual mode
+    echo -e "${BLUE}[*] Running hcxdumptool command in manual mode. Press Ctrl+C to stop.${NC}"
+    xterm -T "hcxdumptool" -e sudo hcxdumptool -i "$wlan" -o "$output" --active_beacon --enable_status=63
+    ;;
+  *)
+    echo -e "${YELLOW}[!] Invalid choice. Please choose 1 or 2.${NC}"
+    ;;
+esac
 # Ask the user how long they whish to run the scan for
 read -p "[-] Enter the duration (in seconds) to run the command: " duration
 echo
-
-# Running the hcxdumptool
-echo -e "${BLUE}[*] Running hcxdumptool command...${NC}"
-xterm -T "hcxdumptool" -e sudo hcxdumptool -i "$wlan" -o "$output" --active_beacon --enable_status=63 &
-pid=$!
-
-sleep "$duration"
-
-sudo kill "$pid"
 
 # Starting the services we stopped earlier
 sudo systemctl start wpa_supplicant.service

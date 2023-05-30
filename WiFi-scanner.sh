@@ -61,6 +61,8 @@ echo
 
 if ! iwconfig "$wlan" > /dev/null 2>&1; then
   echo -e "${YELLOW}[!] Invalid WLAN name. Please enter a valid WLAN name.${NC}"
+  sudo systemctl start wpa_supplicant.service
+  sudo systemctl start NetworkManager.service
   exit 1
 fi
 

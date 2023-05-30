@@ -59,6 +59,11 @@ echo
 read -p "[-] Enter the WLAN you wish to use (example: wlan0): " wlan
 echo
 
+if ! iwconfig "$wlan" > /dev/null 2>&1; then
+  echo -e "${YELLOW}[!] Invalid WLAN name. Please enter a valid WLAN name.${NC}"
+  exit 1
+fi
+
 # Ask user for the output pcapng file name
 read -p "[-] Enter the pcapng output filename (without extension): " pcapngfile
 output="${pcapngfile}.pcapng"

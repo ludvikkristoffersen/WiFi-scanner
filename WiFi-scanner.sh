@@ -31,6 +31,13 @@ if ! command -v hcxpcapngtool > /dev/null; then
         echo -e "${GREEN}[*] hcxpcapngtool installed.${NC}"
         echo
 fi
+if ! command -v xterm > /dev/null; then
+        echo -e "${YELLOW}[!] xterm not found. Installing...${NC}"
+        sudo apt update
+        sudo apt install xterm -y
+        echo -e "${GREEN}[*] xterm installed.${NC}"
+        echo
+fi
 echo -e "${BLUE}[*] ${GREEN}All tools required are installed.${NC}"
 echo
 
@@ -43,14 +50,13 @@ echo -e "${BLUE}[*] ${GREEN}List of available WiFi adapters:${NC}"
 adapters=$(iwconfig 2>/dev/null | grep -oP '^[^\s]+')
 counter=1
 while read -r adapter; do
-  chipset=$(lspci -nn | grep -i "network.*$adapter" | grep -oP ':\s+\K.*$')
-
-  echo "$counter. $adapter       $chipset"
+  echo "$counter. $adapter"
   counter=$((counter + 1))
 done <<< "$adapters"
 echo
+
 # Ask user for the wlan they want to use
-read -p "[-] Enter the WLAN you wish to use: " wlan
+read -p "[-] Enter the WLAN you wish to use (example: wlan0): " wlan
 echo
 
 # Ask user for the output pcapng file name
@@ -65,7 +71,7 @@ echo
 
 # Running the hcxdumptool
 echo -e "${BLUE}[*] Running hcxdumptool command...${NC}"
-sudo hcxdumptool -i "$wlan" -o "$output" --active_beacon --enable_status=15 &
+xterm -e sudo hcxdumptool -i "$wlan" -o "$output" --active_beacon --enable_status=15 &
 pid=$!
 
 sleep "$duration"
@@ -90,7 +96,7 @@ echo
 
 # Convert the pcapng file to a hc22000 file and create a ESSID list
 echo -e "${BLUE}[*] Running hcxpcapngtool command...${NC}"
-hcxpcapngtool -o "$hashcatFile" -E "$essidList" "$output"
+xterm -e hcxpcapngtool -o "$hashcatFile" -E "$essidList" "$output"
 clear
 sleep 1
 

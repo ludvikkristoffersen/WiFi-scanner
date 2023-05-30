@@ -71,7 +71,7 @@ echo
 
 # Running the hcxdumptool
 echo -e "${BLUE}[*] Running hcxdumptool command...${NC}"
-xterm -e sudo hcxdumptool -i "$wlan" -o "$output" --active_beacon --enable_status=15 > mac-addresses.txt &
+xterm -T "hcxdumptool" -e sudo hcxdumptool -i "$wlan" -o "$output" --active_beacon --enable_status=15 &
 pid=$!
 
 sleep "$duration"
@@ -95,7 +95,7 @@ echo
 
 # Convert the pcapng file to a hc22000 file and create a ESSID list
 echo -e "${BLUE}[*] Running hcxpcapngtool command...${NC}"
-xterm -e hcxpcapngtool -o "$hashcatFile" -E "$essidList" "$output"
+xterm -T "hcxpcapngtool" -e hcxpcapngtool -o "$hashcatFile" -E "$essidList" "$output"
 clear
 sleep 1
 

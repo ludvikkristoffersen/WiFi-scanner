@@ -71,7 +71,7 @@ echo
 
 # Running the hcxdumptool
 echo -e "${BLUE}[*] Running hcxdumptool command...${NC}"
-xterm -T "hcxdumptool" -e sudo hcxdumptool -i "$wlan" -o "$output" --active_beacon --enable_status=15 &
+xterm -T "hcxdumptool" -e sudo hcxdumptool -i "$wlan" -o "$output" --active_beacon --enable_status=63 &
 pid=$!
 
 sleep "$duration"

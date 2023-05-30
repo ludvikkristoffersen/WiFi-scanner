@@ -71,13 +71,12 @@ echo
 
 # Running the hcxdumptool
 echo -e "${BLUE}[*] Running hcxdumptool command...${NC}"
-xterm -e sudo hcxdumptool -i "$wlan" -o "$output" --active_beacon --enable_status=15 &
+xterm -e sudo hcxdumptool -i "$wlan" -o "$output" --active_beacon --enable_status=15 > mac-addresses.txt &
 pid=$!
 
 sleep "$duration"
 
 sudo kill "$pid"
-clear
 
 # Starting the services we stopped earlier
 sudo systemctl start wpa_supplicant.service

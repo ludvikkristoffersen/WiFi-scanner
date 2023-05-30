@@ -90,11 +90,11 @@ case $mode in
     ;;
   *)
     echo -e "${YELLOW}[!] Invalid choice. Please choose 1 or 2.${NC}"
+    sudo systemctl start wpa_supplicant.service
+    sudo systemctl start NetworkManager.service
+    exit 1
     ;;
 esac
-# Ask the user how long they whish to run the scan for
-read -p "[-] Enter the duration (in seconds) to run the command: " duration
-echo
 
 # Starting the services we stopped earlier
 sudo systemctl start wpa_supplicant.service

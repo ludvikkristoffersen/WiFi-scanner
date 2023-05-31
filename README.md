@@ -32,7 +32,7 @@ sudo ./WiFi-scanner.sh
 # Usage
 After running the script you should have three files: <name>.pcapng, <name>.hc22000, and ESSID list. You could now go into the <name>.hc22000 file and select which WiFi network you want to crack by filtering out the MAC address of your target. To obtain the MAC address of your target you could do this command, this shows you the both the ESSID and MAC addresses to make it easier to find:
 ```bash
-sudo hcxdumptool --do_rcascan -i <wlan_name>
+sudo hcxdumptool --do_rcascan -i wlan_name
 ```
 
 

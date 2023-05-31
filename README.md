@@ -34,6 +34,6 @@ After running the script you should have three files: <name>.pcapng, <name>.hc22
 ```bash
 sudo hcxdumptool --do_rcascan -i wlan_name
 ```
-
+After you have your .hc22000 file with the WiFi password you want to crack, you can then use hashcat to do a bruteforce attack. David Bombal shows this process in the video linked above.
 
 

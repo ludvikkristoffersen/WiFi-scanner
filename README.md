@@ -1,5 +1,5 @@
 # WiFi scanner
-This is taken from David Bombal's YouTube video regarding how to crack a WiFi password using hashcat and hcxdumptool, so all credit goes to him. If you have not watched the video I would advise you to do so since this script does not crack any password, I took the commands shown in the video of capturing the WiFi handshake and converting the pcapng file to a hc22000 file, wrapped it up in a script making the whole process faster and easier:
+Inspiration is taken from David Bombal's YouTube video regarding how to crack a WiFi password using hashcat and hcxdumptool, so all credit goes to him for the idea. If you have not watched the video I would advise you to do so since this script does not show or do any cracking of passwords. The script is made to automate the process of capturing the four-way handshake using the hcxdumptool, then converting the output of the hcxdumptool to a hashcat readable format using the hcxpcapngtool.
 
 [![David Bombal](https://img.youtube.com/vi/Usw0IlGbkC4/0.jpg)](https://www.youtube.com/watch?v=Usw0IlGbkC4)
 

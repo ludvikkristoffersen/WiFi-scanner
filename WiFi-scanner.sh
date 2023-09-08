@@ -131,6 +131,6 @@ echo "
 █░█░█ █ █▀▀ █   █▀ █▀▀ ▄▀█ █▄░█ █▄░█ █▀▀ █▀█
 ▀▄▀▄▀ █ █▀░ █   ▄█ █▄▄ █▀█ █░▀█ █░▀█ ██▄ █▀▄
 "
-echo -e "${BLUE}- - - - - - - - - - - - - - - - - - by Ludde${NC}"
+echo -e "${BLUE}- - - - - - - - - - - - - - - - - - by DuckWithDarkHat${NC}"
 echo
 echo -e "${YELLOW}[*] WiFi scanner completed.${NC}"

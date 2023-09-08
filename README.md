@@ -17,7 +17,7 @@ Inspiration is taken from David Bombal's YouTube video regarding how to crack a 
 # Installation
 Getting the source:
 ```bash
-git clone https://github.com/Luudde/WiFi-scanner.git
+git clone https://github.com/duckwithdarkhat/WiFi-scanner
 cd WiFi-scanner
 ```
 Make the file executable:

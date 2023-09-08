@@ -13,7 +13,7 @@ echo "
 █░█░█ █ █▀▀ █   █▀ █▀▀ ▄▀█ █▄░█ █▄░█ █▀▀ █▀█
 ▀▄▀▄▀ █ █▀░ █   ▄█ █▄▄ █▀█ █░▀█ █░▀█ ██▄ █▀▄
 "
-echo -e "${BLUE}- - - - - - - - - - - - - - - - - - by DuckWithDarkHat${NC}"
+echo -e "${BLUE}- - - - - - - - - - - - - - - - - - by G00se${NC}"
 sleep 2
 echo
 
@@ -131,6 +131,6 @@ echo "
 █░█░█ █ █▀▀ █   █▀ █▀▀ ▄▀█ █▄░█ █▄░█ █▀▀ █▀█
 ▀▄▀▄▀ █ █▀░ █   ▄█ █▄▄ █▀█ █░▀█ █░▀█ ██▄ █▀▄
 "
-echo -e "${BLUE}- - - - - - - - - - - - - - - - - - by DuckWithDarkHat${NC}"
+echo -e "${BLUE}- - - - - - - - - - - - - - - - - - by G00se${NC}"
 echo
 echo -e "${YELLOW}[*] WiFi scanner completed.${NC}"
